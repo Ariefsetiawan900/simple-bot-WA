@@ -32,5 +32,30 @@ client.on("message", async (message) => {
   }
 });
 
+client.on("message", async (message) => {
+  // Command untuk sticker
+  if (message.body === "!sticker" && message.hasMedia) {
+    const media = await message.downloadMedia();
+    await message.reply(media, undefined, { sendMediaAsSticker: true });
+  }
+
+  // Command untuk info
+  if (message.body === "!info") {
+    const chat = await message.getChat();
+    await message.reply(`
+            Chat Info:
+            Name: ${chat.name}
+            IsGroup: ${chat.isGroup}
+            
+        `);
+  }
+
+  // Echo command
+  if (message.body.startsWith("!echo ")) {
+    const text = message.body.slice(6); // Remove !echo
+    await message.reply(text);
+  }
+});
+
 // Inisialisasi client
 client.initialize();
