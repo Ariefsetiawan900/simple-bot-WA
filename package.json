@@ -10,6 +10,14 @@
   },
   "dependencies": {
     "@types/node": "^22.13.1",
+    "@types/node-cache": "^4.2.5",
+    "@types/node-schedule": "^2.1.7",
+    "axios": "^1.7.9",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.47",
+    "node-cache": "^5.1.2",
+    "node-schedule": "^2.1.1",
+    "puppeteer": "^24.2.0",
     "qrcode-terminal": "^0.12.0",
     "typescript": "^5.7.3",
     "whatsapp-web.js": "^1.26.0"
